@@ -213,9 +213,9 @@ Therefore, if the attacker and the victim are not on the same network, port 22 m
 
 ## Persistence
 
-The module is persistence because we write a file : `/etc/modules-load.d/${MODULE_NAME}.conf`
+The module is persistent because we write a file : `/etc/modules-load.d/${MODULE_NAME}.conf`
 
-This mean it will load the module at start automatically
+This mean it will load the module at OS start automatically
 
 ## Hide the rootkit from the module list
 
